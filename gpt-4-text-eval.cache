@@ -1,0 +1,1826 @@
+calculator,correct_answers,is_multiple_choice,contains_image,question,model_answer_text,grader_answer_text,model_correct
+False,['C'],True,True,"[asy]
+import graph;
+real xmin = 0, xmax = 35;
+real ymin = 0, ymax = 55;
+xaxis(""Time (hours)"", xmin, xmax, Ticks(Label(fontsize(10pt)), Step=5.0, step=5.0));
+yaxis(""Mass of sodium-24 (milligrams)"", ymin, ymax, Ticks(Label(fontsize(10pt)), Step=10.0, step=10.0));
+real decay(real x) { return 50 * exp(-0.04* x); }
+draw(graph(decay, xmin, 30), linewidth(1.5) + black);
+real[] hours = {0, 5, 10, 15, 20, 25, 30};
+for (real h : hours) {
+    dot((h, decay(h)), 4 + black);
+}
+[/asy]
+The graph models the radioactive decay of the  
+sodium-24 in a sample over time. According to the  
+graph, at 5 hours, which of the following is closest to  
+the mass, in milligrams, of the sodium-24 in this  
+sample?  
+A. 25  
+B. 31  
+C. 40  
+D. 50","To determine the mass of sodium-24 in the sample at 5 hours, we need to use the decay function provided in the Asymptote code block:
+
+```asy
+real decay(real x) { return 50 * exp(-0.04* x); }
+```
+
+This function gives the mass of sodium-24 remaining after `x` hours. We are interested in the mass after 5 hours. So we'll substitute `x` with 5:
+
+```asy
+decay(5) = 50 * exp(-0.04 * 5);
+```
+
+Performing the calculation:
+
+```asy
+decay(5) = 50 * exp(-0.2);
+```
+
+Now we can compute the numerical value using a calculator for the exponential function:
+
+```asy
+decay(5) ≈ 50 * exp(-0.2) ≈ 50 * 0.8187 ≈ 40.935;
+```
+
+So, after 5 hours, the mass of sodium-24 is approximately 40.935 milligrams. Looking at the options provided, the closest value to this result is:
+
+C. 40
+
+Therefore, the correct answer is C. 40 milligrams.",NO,False
+False,['B'],True,False,"$|x+3| = 6$ What is the positive solution to the given equation?
+A. 2
+B. 3
+C. 9
+D. 18","To solve the equation $|x+3| = 6$ for the positive solution, consider that the absolute value of an expression is the non-negative value of that expression. Therefore, an absolute value equation $|expression| = a$ has two possible solutions:
+
+1. $expression = a$
+2. $expression = -a$
+
+Let's apply this here:
+
+1. When $x + 3 = 6$: Subtract 3 from both sides to solve for $x$:
+   $x = 6 - 3$
+   $x = 3$
+
+2. When $x + 3 = -6$: Subtract 3 from both sides to solve for $x$:
+   $x = -6 - 3$
+   $x = -9$
+
+So, we have two solutions: $x = 3$ and $x = -9$.
+
+Since you asked for the positive solution, the answer is:
+B. 3",NO,False
+False,['B'],True,True,"$y=4-x$ What is the graph of the given equation?
+A. [asy]
+import graph;
+size(200,200);
+xaxis(""$x$"", -6, 6, Ticks(Label(fontsize(8pt)), 2.0));
+yaxis(""$y$"", -6, 6, Ticks(Label(fontsize(8pt)), 2.0));
+draw((-6,-2)--(2,6));
+[/asy]
+B. [asy]
+import graph;
+size(200,200);
+xaxis(""$x$"", -6, 6, Ticks(Label(fontsize(8pt)), 2.0));
+yaxis(""$y$"", -6, 6, Ticks(Label(fontsize(8pt)), 2.0));
+draw((-2,6)--(6,-2));
+[/asy]
+C. [asy]
+import graph;
+size(200,200);
+xaxis(""$x$"", -6, 6, Ticks(Label(fontsize(8pt)), 2.0));
+yaxis(""$y$"", -6, 6, Ticks(Label(fontsize(8pt)), 2.0));
+draw((-2,-6)--(6,2));
+[/asy]
+D. [asy]
+import graph;
+size(200,200);
+xaxis(""$x$"", -6, 6, Ticks(Label(fontsize(8pt)), 2.0));
+yaxis(""$y$"", -6, 6, Ticks(Label(fontsize(8pt)), 2.0));
+draw((-6,2)--(2,-6));
+[/asy]","The equation $y = 4 - x$ represents a straight line with a y-intercept at (0, 4) and a slope of -1. This means that for every unit increase in x, y decreases by 1 unit.
+
+We can plot two points to construct this line:
+
+1. When $x = 0$, $y = 4 - 0 = 4$. So, we have the point (0, 4).
+2. When $y = 0$, $0 = 4 - x$, which gives $x = 4$. So, we have the point (4, 0).
+
+The line must pass through the points (0, 4) and (4, 0).
+
+Option B correctly represents this line. It shows a line that passes through (4, 0) and has a negative slope, which means it goes downwards as we move from left to right. This corresponds with the fact that as x increases, y decreases, which is the behavior of the line $y = 4 - x$.
+",YES,True
+False,['C'],True,False,"$y=7-4x$ $15x-4y-3$ What is the solution (x,y) to the given system of equations?
+A. (-31, 131)
+B. (-1, 11)
+C. (1, 3)
+D. (1, 11)","Let's solve the system of linear equations:
+
+1. y = 7 - 4x
+2. 15x - 4y = 3
+
+We can substitute the expression for y from the first equation into the second equation:
+
+15x - 4(7 - 4x) = 3
+15x - 28 + 16x = 3
+31x - 28 = 3
+31x = 3 + 28
+31x = 31
+x = 31 / 31
+x = 1
+
+Now that we have the value of x, we can plug it back into the first equation to find y:
+
+y = 7 - 4(1)
+y = 7 - 4
+y = 3
+
+Therefore, the solution to the system of equations is (x, y) = (1, 3).
+
+The correct answer is C. (1, 3).",YES,True
+False,['B'],True,True,"$y \leq 2x+3$ $y \geq 0.5x-6$
+In which graph does the shaded region represent all solutions to the given system of inequalities?
+A. [asy]
+import graph; 
+size(250, IgnoreAspect); 
+real xmin = -20, xmax = 10, ymin = -20, ymax = 6;
+real f1(real x) { return 2*x + 3; }
+real f2(real x) { return 0.5*x -6; }
+xaxis(""$x$"", xmin, xmax, Ticks(Label(fontsize(8pt)), 2.0));
+yaxis(""$y$"", ymin, ymax, Ticks(Label(fontsize(8pt)), 2.0));
+draw((-10,0)--(10,0), Arrow);
+draw((0,-10)--(0,10), Arrow);
+draw(graph(f1, xmin, xmax));
+draw(graph(f2, xmin, xmax));
+pair intersection = intersectionpoint(graph(f1, xmin, xmax), graph(f2, xmin, xmax));
+pair A = (xmin, f1(xmin));
+pair B = (xmin, f2(xmin));
+pair C = (xmax, f2(xmax));
+pair D = (xmax, f1(xmax));
+pair F = (2, f1(2));
+pair G = (-14, f1(-14));
+pair UL = (xmin, ymax+1);
+pair UR = (xmax, ymax+1);
+pair LR = (xmax, ymin-1);
+pair LL = (xmin, ymin-1); 
+fill(intersection--B--UL--F--cycle, rgb(0.9,0.9,0.8)+opacity(0.5));
+clip(box((xmin-1,ymin-1), (xmax+1,ymax+1)));
+[/asy]
+B. [asy]
+import graph; 
+size(250, IgnoreAspect); 
+real xmin = -20, xmax = 10, ymin = -20, ymax = 6;
+real f1(real x) { return 2*x + 3; }
+real f2(real x) { return 0.5*x -6; }
+xaxis(""$x$"", xmin, xmax, Ticks(Label(fontsize(8pt)), 2.0));
+yaxis(""$y$"", ymin, ymax, Ticks(Label(fontsize(8pt)), 2.0));
+draw((-10,0)--(10,0), Arrow);
+draw((0,-10)--(0,10), Arrow);
+draw(graph(f1, xmin, xmax));
+draw(graph(f2, xmin, xmax));
+pair intersection = intersectionpoint(graph(f1, xmin, xmax), graph(f2, xmin, xmax));
+pair A = (xmin, f1(xmin));
+pair B = (xmin, f2(xmin));
+pair C = (xmax, f2(xmax));
+pair D = (xmax, f1(xmax));
+pair F = (2, f1(2));
+pair G = (-14, f1(-14));
+pair UL = (xmin, ymax+1);
+pair UR = (xmax, ymax+1);
+pair LR = (xmax, ymin-1);
+pair LL = (xmin, ymin-1); 
+fill(intersection--F--UR--C--cycle, rgb(0.9,0.9,0.8)+opacity(0.5));
+clip(box((xmin-1,ymin-1), (xmax+1,ymax+1)));
+[/asy]
+C. [asy]
+import graph; 
+size(250, IgnoreAspect); 
+real xmin = -20, xmax = 10, ymin = -20, ymax = 6;
+real f1(real x) { return 2*x + 3; }
+real f2(real x) { return 0.5*x -6; }
+xaxis(""$x$"", xmin, xmax, Ticks(Label(fontsize(8pt)), 2.0));
+yaxis(""$y$"", ymin, ymax, Ticks(Label(fontsize(8pt)), 2.0));
+draw((-10,0)--(10,0), Arrow);
+draw((0,-10)--(0,10), Arrow);
+draw(graph(f1, xmin, xmax));
+draw(graph(f2, xmin, xmax));
+pair intersection = intersectionpoint(graph(f1, xmin, xmax), graph(f2, xmin, xmax));
+pair A = (xmin, f1(xmin));
+pair B = (xmin, f2(xmin));
+pair C = (xmax, f2(xmax));
+pair D = (xmax, f1(xmax));
+pair F = (2, f1(2));
+pair G = (-14, f1(-14));
+pair UL = (xmin, ymax+1);
+pair UR = (xmax, ymax+1);
+pair LR = (xmax, ymin-1);
+pair LL = (xmin, ymin-1); 
+fill(intersection--B--LL--G--cycle, rgb(0.9,0.9,0.8)+opacity(0.5));
+clip(box((xmin-1,ymin-1), (xmax+1,ymax+1)));
+[/asy]
+D. [asy]
+import graph; 
+size(250, IgnoreAspect); 
+real xmin = -20, xmax = 10, ymin = -20, ymax = 6;
+real f1(real x) { return 2*x + 3; }
+real f2(real x) { return 0.5*x -6; }
+xaxis(""$x$"", xmin, xmax, Ticks(Label(fontsize(8pt)), 2.0));
+yaxis(""$y$"", ymin, ymax, Ticks(Label(fontsize(8pt)), 2.0));
+draw((-10,0)--(10,0), Arrow);
+draw((0,-10)--(0,10), Arrow);
+draw(graph(f1, xmin, xmax));
+draw(graph(f2, xmin, xmax));
+pair intersection = intersectionpoint(graph(f1, xmin, xmax), graph(f2, xmin, xmax));
+pair A = (xmin, f1(xmin));
+pair B = (xmin, f2(xmin));
+pair C = (xmax, f2(xmax));
+pair D = (xmax, f1(xmax));
+pair F = (2, f1(2));
+pair G = (-14, f1(-14));
+pair UL = (xmin, ymax+1);
+pair UR = (xmax, ymax+1);
+pair LR = (xmax, ymin-1);
+pair LL = (xmin, ymin-1); 
+fill(intersection--G--LR--C--cycle, rgb(0.9,0.9,0.8)+opacity(0.5));
+clip(box((xmin-1,ymin-1), (xmax+1,ymax+1)));
+[/asy]","To determine the correct graph that represents all solutions to the given system of inequalities \( y \leq 2x+3 \) and \( y \geq 0.5x-6 \), we should consider the following:
+
+1. The region satisfying \( y \leq 2x+3 \) will be on or below the line \( y = 2x+3 \).
+2. The region satisfying \( y \geq 0.5x-6 \) will be on or above the line \( y = 0.5x-6 \).
+
+The graphs provided show different shaded regions that represent different combinations of the two inequalities. The shaded region for the system should be the intersection where both conditions are met (both above \( y = 0.5x-6 \) and below \( y = 2x+3 \)).
+
+Graph A: The shaded area is above \( y = 2x+3 \) and not between the two lines. This doesn't satisfy our system of inequalities.
+
+Graph B: The shaded area is between the two lines but extends infinitely upwards, violating the \( y \leq 2x+3 \) condition.
+
+Graph C: The shaded area is below \( y = 2x+3 \) and above \( y = 0.5x-6 \) but extends to the left indefinitely, which does not fit the constraints for y (since y should be greater than or equal to 0.5x - 6 for all x).
+
+Graph D: The shaded area is between the two lines, and it is indeed the only graph that satisfies both conditions: it is above \( y = 0.5x-6 \) and below \( y = 2x+3 \). This region is correctly bounded between the lines.
+
+Therefore, the correct graph is Graph D.",NO,False
+False,['A'],True,False,"$f(t) = 0.17t+2.54$
+The given function f models the annual worldwide production of avocados, in millions of metric tons, t years after 2000. According to the function, by how many millions of metric tons did the annual
+worldwide production of avocados increase from 2010 to 2011?
+A. 0.17
+B. 2.54
+C. 2.71
+D. 4.24","To find the increase in annual worldwide production of avocados from 2010 to 2011, we can calculate the value of the function f for t = 10 (representing the year 2010) and for t = 11 (representing the year 2011), and then subtract the former from the latter.
+
+For t = 10 (2010):
+$$f(10) = 0.17(10) + 2.54 = 1.7 + 2.54 = 4.24$$
+
+For t = 11 (2011):
+$$f(11) = 0.17(11) + 2.54 = 1.87 + 2.54 = 4.41$$
+
+Now we take the difference between production in 2011 and production in 2010:
+$$f(11) - f(10) = 4.41 - 4.24 = 0.17$$
+
+The annual worldwide production of avocados increased by 0.17 million metric tons from 2010 to 2011. Therefore, the correct answer is:
+
+A. 0.17",YES,True
+False,['D'],True,False,"7. Which equation has no solution?
+A. 4(x + 1) = x + 4
+B. 4(x + 1) = x + 1
+C. 4(x + 1) = = 4x + 4
+D. 4(x + 1) = 4x","Let's examine each equation to decide which one does not have a solution:
+
+A. \( 4(x + 1) = x + 4 \)
+Distribute the 4 to both terms in the parenthesis on the left side, you get:
+\( 4x + 4 = x + 4 \)
+Subtract \( x \) from both sides:
+\( 3x + 4 = 4 \)
+Subtract 4 from both sides:
+\( 3x = 0 \)
+Divide by 3:
+\( x = 0 \)
+This equation has a solution, which is \( x = 0 \).
+
+B. \( 4(x + 1) = x + 1 \)
+Again, distribute the 4 to both terms in the parenthesis on the left side:
+\( 4x + 4 = x + 1 \)
+Subtract \( x \) from both sides:
+\( 3x + 4 = 1 \)
+Subtract 4 from both sides:
+\( 3x = -3 \)
+Divide by 3:
+\( x = -1 \)
+This equation also has a solution, namely \( x = -1 \).
+
+C. There appears to be a typographical error in option C, as indicated by the double equals sign ""=="". However, assuming the intention was to write \( 4(x + 1) = 4x + 4 \), you would distribute the 4 to both terms in the parenthesis on the left side:
+\( 4x + 4 = 4x + 4 \)
+Subtract \( 4x \) from both sides:
+\( 4 = 4 \)
+This equation is an identity, meaning it is true for all values of x. All values of x satisfy this equation, so it doesn't have no solution; rather, it has infinitely many solutions.
+
+D. \( 4(x + 1) = 4x \)
+Distribute the 4 to both terms in the parenthesis on the left side:
+\( 4x + 4 = 4x \)
+Now subtract \( 4x \) from both sides:
+\( 4 = 0 \)
+This statement is not true; it's a contradiction. No real value of \( x \) will satisfy this equation. Therefore, this equation has no solution.
+
+The equation with no solution is:
+
+D. \( 4(x + 1) = 4x \)",NO,False
+False,['D'],True,False,"The function $f$ is defined by $f(x) = (x - 1)(x + 1)(x + 2)$. Which of the following is NOT an x-intercept of the graph $y = f(x)$ in the xy-plane?
+A. $(-2, 0)$
+B. $(-1, 0)$
+C. $(1, 0)$
+D. $(2, 0)$","An x-intercept occurs when $y = 0$. For the given function $f(x) = (x - 1)(x + 1)(x + 2)$, the x-intercepts are the values of $x$ that make the function equals zero.
+
+By looking at the factors $(x - 1)$, $(x + 1)$, and $(x + 2)$, we can directly see what these x-intercepts are. When any of these factors equals zero, the entire product will be zero. So we get the x-intercepts by setting each factor to zero:
+
+1. $(x - 1) = 0$ leads to $x = 1$. This gives us the x-intercept $(1, 0)$.
+2. $(x + 1) = 0$ leads to $x = -1$. This gives us the x-intercept $(-1, 0)$.
+3. $(x + 2) = 0$ leads to $x = -2$. This gives us the x-intercept $(-2, 0)$.
+
+This means that the coordinates for the x-intercepts should be $(-2, 0)$, $(-1, 0)$, and $(1, 0)$. Therefore, option D $(2, 0)$ is NOT an x-intercept of the graph $y = f(x)$ and is the correct answer.",NO,False
+False,['A'],True,False,"Which expression is equivalent to $16^{(rac{1}{2}x)}$?
+A. $4^x$
+B. $8^x$
+C. $8x$
+D. $16\sqrt{x}$","To find an equivalent expression for $16^{\left(\frac{1}{2}x\right)}$, we should first recognize that 16 is a perfect square, as 16 is equal to $4^2$.
+
+So we can substitute $4^2$ into the expression for 16:
+
+$16^{\left(\frac{1}{2}x\right)} = (4^2)^{\left(\frac{1}{2}x\right)}$
+
+By the properties of exponents, when we raise a power to a power, we multiply the exponents:
+
+$(4^2)^{\left(\frac{1}{2}x\right)} = 4^{2 \cdot \frac{1}{2}x} = 4^{1 \cdot x} = 4^x$
+
+So the correct expression equivalent to $16^{\left(\frac{1}{2}x\right)}$ is $4^x$.
+
+Therefore, the answer is:
+A. $4^x$",YES,True
+False,['C'],True,False,"Trapezoid ABCD is similar to trapezoid PQRS. The length of each side of trapezoid PQRS is 3 times the length of its corresponding side of trapezoid ABCD. The area of trapezoid ABCD is 6 square centimeters. What is the area, in square centimeters, of trapezoid PQRS?
+A. 9
+B. 18
+C. 54
+D. 216","When two shapes are similar, the ratio of their corresponding side lengths is the same for all sides, and the ratio of their areas is the square of the ratio of their side lengths.
+
+In this case, the lengths of the sides of trapezoid PQRS are 3 times the lengths of the corresponding sides of trapezoid ABCD. This means the scale factor for the sides is 3.
+
+To find the ratio of their areas, we square the scale factor:
+
+Area ratio = (Side length ratio)²
+Area ratio = (3)²
+Area ratio = 9
+
+Now, to find the area of trapezoid PQRS, we multiply the area of trapezoid ABCD by the area ratio:
+
+Area of PQRS = Area of ABCD × Area ratio
+Area of PQRS = 6 cm² × 9
+Area of PQRS = 54 cm²
+
+Therefore, the correct answer is:
+
+C. 54",YES,True
+False,['D'],True,False,"The function $f$ is defined by $f(x) = (x + 1)^2 - 9$. In the $xy$-plane, the graph of which of the following equations has no $x$-intercepts?
+A. $y = f(x - 2)$
+B. $y = f(x + 2)$
+C. $y = f(x) - 11$
+D. $y = f(x) + 11$","Let's first understand the given function $f(x) = (x + 1)^2 - 9$. 
+
+To determine the $x$-intercepts of a function, we set $y = 0$ and solve for $x$. The $x$-intercepts occur at the values of $x$ where the function crosses the $x$-axis. 
+
+For the given function $f(x)$, setting $y = 0$ yields the following:
+$$0 = (x + 1)^2 - 9.$$
+
+The solutions to this equation will be the $x$-intercepts of $f(x)$. However, we are looking for a transformed version of $f(x)$ that has no $x$-intercepts. 
+
+A function $f(x)$ will have no $x$-intercepts if after being shifted either up or down, it lies entirely above or below the $x$-axis. Let's examine the options:
+
+A. $y = f(x - 2)$: This is a horizontal shift of the function $f(x)$ 2 units to the right. The $x$-intercepts would simply move to the right as well, but this does not remove the $x$-intercepts.
+B. $y = f(x + 2)$: This is a horizontal shift of the function $f(x)$ 2 units to the left. Similarly, this just moves the $x$-intercepts to the left, but it does not remove them.
+C. $y = f(x) - 11$: This is a vertical shift of the function $f(x)$ 11 units downward. The original equation $(x + 1)^2 - 9 = 0$ yields real $x$-intercepts when solved, and moving the graph down will not remove the $x$-intercepts; instead, it will just shift the $x$-intercepts lower on the graph.
+D. $y = f(x) + 11$: This is a vertical shift of the function $f(x)$ 11 units upward. If the original function $f(x)$ has real $x$-intercepts, shifting it upwards by 11 units could potentially raise the entire graph above the $x$-axis, removing the $x$-intercepts.
+
+To confirm option D, let's find the vertex of the parabola described by $f(x)$. The vertex form of a parabola is $y = a(x - h)^2 + k$ where $(h, k)$ is the vertex of the parabola.
+
+The given function $f(x) = (x + 1)^2 - 9$ is already in vertex form with $h = -1$ and $k = -9$. So, the vertex of the parabola described by $f(x)$ is at $(-1, -9)$. If we add 11 to this function to get $y = f(x) + 11$, the new vertex will be at $(-1, -9 + 11)$ which is $(-1, 2)$. Since the vertex of the parabola is above the $x$-axis and the parabola opens upwards (because the coefficient of the $(x + 1)^2$ term is positive), the entire graph will be above the $x$-axis, ensuring there are no $x$-intercepts.
+
+Therefore, the correct answer is D. $y = f(x) + 11$.",YES,True
+False,['D'],True,False,"$x^2 - 10x + y^2 - 6y = 30$
+In the $xy$-plane, the graph of the given equation is a circle. What is the area of this circle?
+A. $8\pi$
+B. $15\pi$
+C. $46\pi$
+D. $64\pi$","To find the area of the circle represented by the equation in the $xy$-plane, we first need to complete the square to put the equation in the standard form of a circle's equation: $(x-h)^2 + (y-k)^2 = r^2$, where $(h,k)$ is the center of the circle and $r$ is the radius.
+
+Starting with the given equation:
+
+$x^2 - 10x +  y^2 - 6y = 30$
+
+We complete the square for each variable separately:
+
+For $x$: Add and subtract $(10/2)^2 = 25$ inside the equation.
+For $y$: Add and subtract $(6/2)^2 = 9$ inside the equation.
+
+Doing this gives us:
+
+$x^2 - 10x + 25 - 25 + y^2 - 6y + 9 - 9 = 30$
+
+Group the complete squares with the variables and adjust the constant accordingly:
+
+$(x^2 - 10x + 25) + (y^2 - 6y + 9) = 30 + 25 + 9$
+
+$(x - 5)^2 + (y - 3)^2 = 64$
+
+Now we have the equation in standard form, where the center of the circle is at $(5, 3)$, and the radius $r$ is the square root of $64$, which is $8$.
+
+The area $A$ of a circle is given by the formula $A = \pi r^2$. Substituting our radius we get:
+
+$A = \pi \times 8^2 = \pi \times 64 = 64\pi$
+
+So, the area of the circle is $64\pi$, which corresponds to option D.",YES,True
+False,['A'],True,False,"$rac{x^2+x}{x+5}$
+The given expression can be rewritten as $A + rac{20}{x+5}$, where A is a polynomial. Which of the following represents A?
+A. $x-4$
+B. $x+4$
+C. $x^2 + x$
+D. $x^2 + x - 20$","To rewrite the given expression in the form $A + \frac{20}{x+5}$, we need to find the polynomial $A$ such that the original expression can be broken down into two terms. To do this, we can perform polynomial long division or simplify the fraction by splitting it into the sum of two fractions, with $A$ being the polynomial part and $\frac{20}{x+5}$ being the remainder part.
+
+Let's use polynomial long division to divide the numerator by the denominator:
+
+           ____________________
+      x+5 | x^2 + x
+             - (x^2 + 5x)
+              ___________
+                   -4x
+                - (-4x - 20)
+                 ___________
+                        20
+
+After the division, we have:
+
+$x^2+x = (x-4)(x+5) + 20$
+$x^2+x = x(x+5) - 4(x+5) + 20$
+$x^2+x = x(x+5) - 4(x+5) + \frac{20}{x+5}(x+5)$
+
+Rewriting the expression:
+
+$x^2+x = x(x+5) + \frac{-4(x+5)(x+5)}{x+5} + \frac{20}{x+5}$
+$x^2+x = x(x+5) - 4(x+5) + \frac{20}{x+5}$
+$x^2+x = (x-4)(x+5) + \frac{20}{x+5}$
+
+Therefore, the polynomial $A$ that we are looking for is the quotient we obtained from the division without the remainder, which is $x-4$. Hence, the correct answer is:
+
+A. $x-4$",YES,True
+False,['D'],True,False,"$rac{1}{C} = rac{1}{d} + rac{1}{e} + rac{1}{f}$
+An electric circuit contains three capacitors in a  particular arrangement. The given equation relates the equivalent capacitance C of the arrangement to  $d$, $e$,  and $f$, the capacitances of the individual  capacitors. Which equation correctly gives $C$ in terms  
+of $d$, $e$, and $f$ ?
+A. $C = d + e + f$
+B. $C = rac{def}{d+e+f}$
+C. $rac{d+e+f}{def}$
+D. $C = rac{def}{de+df+ef}$","The given equation is:
+
+$$\frac{1}{C} = \frac{1}{d} + \frac{1}{e} + \frac{1}{f}$$
+
+This is the formula for capacitors connected in parallel. To find the expression for the equivalent capacitance $C$ in terms of the capacitances of the individual capacitors $d$, $e$, and $f$, we need to take the reciprocal of both sides:
+
+$$C = \frac{1}{\left(\frac{1}{d} + \frac{1}{e} + \frac{1}{f}\right)}$$
+
+We will calculate the denominator by finding a common denominator for $\frac{1}{d}$, $\frac{1}{e}$, and $\frac{1}{f}$, which would be $def$. Thus we rewrite each term with the common denominator:
+
+$$C = \frac{1}{\left(\frac{ef}{def} + \frac{df}{def} + \frac{de}{def}\right)}$$
+
+Now we can combine the fractions:
+
+$$C = \frac{1}{\left(\frac{ef+df+de}{def}\right)}$$
+
+Finally, the equivalent capacitance $C$ is obtained by taking the reciprocal of this expression:
+
+$$C = \frac{def}{ef+df+de}$$
+
+Hence, the correct equation that gives $C$ in terms of $d$, $e$, and $f$ is:
+
+D. $C = \frac{def}{de+df+ef}$",YES,True
+False,['D'],True,False,"The cost of renting a bicycle is $8 for the first  hour plus $4 for each additional hour. Which of the   following functions gives the cost $C(h)$, in dollars, of renting the bicycle for $h$ hours, where $h$ is a positive integer?
+A. $C(h) = 8h -4$
+B. $C(h) = 8h + 12$
+C. $C(h) = 4h + 8$
+D. $C(h) = 4h + 4$","Let's analyze the cost of renting a bicycle for $h$ hours.
+
+If $h = 1$, the cost is $8 for the first hour.
+
+For each additional hour beyond the first, the cost is $4 per hour.
+
+Thus, for $h$ hours, the calculation would go as follows:
+- The first hour costs $8.
+- Every hour after the first hour costs $4 each.
+
+So if we have $h$ hours in total, we have to account for the initial $8 and then add $4 for each of the remaining $h - 1$ hours.
+
+The formula for the total cost $C(h)$ would be:
+
+\[ C(h) = 8 + 4(h - 1) \]
+
+Expanding the formula gives us:
+
+\[ C(h) = 8 + 4h - 4 \]
+\[ C(h) = 4h + 4 \]
+
+Therefore, the correct answer for the cost function is:
+
+D. $C(h) = 4h + 4$",YES,True
+False,"['3/2', '1.5']",False,False,"$5r = 3(r+1)$
+What value of $r$ is the solution to the given equation? ","We can solve the equation $5r = 3(r + 1)$ by expanding the right side and then isolating the variable $r$:
+
+Starting with the given equation:
+\[5r = 3(r + 1)\]
+
+Now expand the right side by distributing the 3 to both $r$ and $1$:
+\[5r = 3r + 3\]
+
+Next, to isolate $r$, subtract $3r$ from both sides of the equation:
+\[5r - 3r = 3r - 3r + 3\]
+\[2r = 3\]
+
+Now, divide both sides by 2 to solve for $r$:
+\[\frac{2r}{2} = \frac{3}{2}\]
+\[r = \frac{3}{2}\]
+\[r = 1.5\]
+
+Hence, the value of $r$ that is the solution to the given equation is \( r = 1.5 \).",YES,True
+False,['2'],False,False,"$(3x)^2 + 4(3x) - 12 = 0$
+What is the positive solution to the given equation?","To find the positive solution to the given equation, we first need to solve the quadratic equation. The equation given is:
+
+$$(3x)^2 + 4(3x) - 12 = 0$$
+
+First, expand and simplify:
+
+$$9x^2 + 12x - 12 = 0$$
+
+Now, we'll attempt to solve for $x$ using the quadratic formula, which is:
+
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+In our quadratic equation ($ax^2 + bx + c = 0$), the coefficients are:
+- $a = 9$
+- $b = 12$
+- $c = -12$
+
+Plugging these values into the quadratic formula:
+
+$$x = \frac{-12 \pm \sqrt{(12)^2 - 4 \cdot 9 \cdot (-12)}}{2 \cdot 9}$$
+
+First, calculate the discriminant ($b^2 - 4ac$):
+
+$$\Delta = (12)^2 - 4 \cdot 9 \cdot (-12)$$
+$$\Delta = 144 + 432$$
+$$\Delta = 576$$
+
+Now, substitute the discriminant back into the quadratic formula:
+
+$$x = \frac{-12 \pm \sqrt{576}}{18}$$
+
+Since you're only interested in the positive solution, let's use the positive square root:
+
+$$x = \frac{-12 + 24}{18}$$
+
+We take 24 because it is the square root of 576, and we ignore the negative square root value.
+
+Simplify the result:
+
+$$x = \frac{12}{18}$$
+$$x = \frac{2}{3}$$
+
+Hence, the positive solution to the given equation is $x = \frac{2}{3}$.",YES,True
+False,"['5/2', '2.5']",False,True,"[asy]
+import graph;
+size(8cm);
+real xmin = -7;
+real xmax = 7;
+real ymin = -7;
+real ymax = 7;
+xaxis(""$x$"", xmin, xmax, Ticks(Label(fontsize(8pt)), 1.0));
+yaxis(""$y$"", ymin, ymax, Ticks(Label(fontsize(8pt)), 1.0));
+draw((-7,0)--(7,0), Arrow);
+draw((0,-7)--(0,7), Arrow);
+real slope = -2/5; 
+real intercept = -2; 
+real f(real x) { return slope*x + intercept; }
+draw(graph(f,  -7, 7), linewidth(1.5) + black);
+dot((-5,0), linewidth(4));
+dot((0,-2), linewidth(4));
+[/asy]
+Line k is shown in the xy-plane. Line j (not shown) is perpendicular to line k. What is the slope of line j?","The slope of line k, as given in your graphing code, is -2/5.
+
+When two lines are perpendicular to each other, their slopes have a special relationship. Specifically, the slopes of two perpendicular lines in the xy-plane are negative reciprocals of each other. The negative reciprocal of a given slope m is -1/m.
+
+Therefore, the slope of line j, which is perpendicular to line k, can be found by taking the negative reciprocal of the slope of line k:
+
+For line k: slope = -2/5
+For line j: slope = -1 / (-2/5) = 5/2
+
+So, the slope of line j is 5/2.",YES,True
+False,['16'],False,False,"In the xy-plane, the graph of $y=(-14)(rac{1}{2})^x + k$ where k is a constant, has a y-intercept of (0,2).
+What is the value of k?","The y-intercept of a graph in the xy-plane is the value of y when x is 0. For the given function:
+
+\( y=(-14)(\frac{1}{2})^x + k \)
+
+To find the y-intercept, we need to substitute x with 0:
+
+\( y=(-14)(\frac{1}{2})^0 + k \)
+
+Since any non-zero number raised to the power of 0 is 1, we have:
+
+\( y=(-14)(1) + k \)
+\( y=-14 + k \)
+
+We are given that the y-intercept is (0,2), so:
+
+\( 2 = -14 + k \)
+
+To find the value of k, we'll add 14 to both sides of the equation:
+
+\( 2 + 14 = k \)
+\( 16 = k \)
+
+So the value of k is 16.",YES,True
+False,"['15/4', '3.75']",False,False,"The perimeter of a square inscribed in a circle is 30 inches. The radius of the circle is $x\sqrt{2}$ inches. What is the value of x?
+","The perimeter of a square inscribed in a circle (which is also known as a circumcircle) is four times the length of one of its sides. If the perimeter of the square is 30 inches, then one side of the square is 30 inches divided by 4 which is 7.5 inches.
+
+Now, to find the relationship between the side of the square and the radius of the circumscribed circle, we can use the Pythagorean Theorem. The diagonal of the square is the diameter of the circle. Since the square is inscribed inside the circle, the diagonal of the square will be equal to twice the radius (diameter) of the circle.
+
+For a square, the diagonal can be found by multiplying the length of one side by the square root of 2 (because a square's diagonal creates a 45-45-90 triangle).
+
+So, we can set up the following equation using the side of the square (s) and the radius of the circle (r):
+
+Diagonal of square (d) = s * sqrt(2) = 2r
+
+We know the side of the square s is 7.5 inches, so:
+
+7.5 inches * sqrt(2) = 2 * r
+
+Now we can solve for r:
+
+r = (7.5 inches * sqrt(2)) / 2
+r = (7.5 / 2) * sqrt(2)
+r = 3.75 * sqrt(2) inches
+
+The radius r is given to us in the form x * sqrt(2), so x must be the coefficient of sqrt(2), which is 3.75. 
+
+Therefore, the value of x is 3.75 inches.",YES,True
+True,['A'],True,False,"
+$k(x) = 260x$
+The function gives the total amount $k(x)$, in dollars, Kayla earned after working x weeks at a bookstore. What is the total amount Kayla earned, in dollars, after working 10 weeks at the bookstore?  
+A. 2,600  
+B. 2,610  
+C. 2,626  
+D. 2,860","To find the total amount Kayla earned after working 10 weeks at the bookstore, substitute x = 10 into the function k(x):
+
+k(x) = 260x
+k(10) = 260 * 10
+k(10) = 2600
+
+The total amount Kayla earned after working 10 weeks at the bookstore is $2,600.
+
+The correct answer is A. 2,600.",YES,True
+True,['A'],True,False,"The function $f$ is defined by$f(x)=x+4$ What is the value of $f(x)$ when $x=$?  
+A. 9  
+B. 5  
+C. 4  
+D. 1","The function $f(x)$ is defined as $f(x) = x + 4$. To find the value of $f(x)$ when $x$ is a specific number, you simply substitute the given value of $x$ into the function and perform the calculation.
+
+A. When $x = 9$, $f(x) = 9 + 4 = 13$
+B. When $x = 5$, $f(x) = 5 + 4 = 9$
+C. When $x = 4$, $f(x) = 4 + 4 = 8$
+D. When $x = 1$, $f(x) = 1 + 4 = 5$
+
+However, you have not specified the exact value $x$ equals in the question ""What is the value of $f(x)$ when $x=$?"" To give a definitive answer, I would need to know the specific value of $x$ you're asking about. If you meant to ask, ""What is the value of f(x) for each of the options A, B, C, and D?"", please refer to the answers provided above.",NO,False
+True,['C'],True,True,"[asy]
+import graph;
+size(200,200);
+xaxis(""$x$"", -3, 4, Ticks(Label(fontsize(8pt)), 1.0));
+yaxis(""$y$"", -3, 4, Ticks(Label(fontsize(8pt)), 1.0));
+draw((-2,-9)--(4,15));
+clip(box((-4,-4), (5,5)));
+[/asy]
+What is an equation of the graph shown?
+A. $y=-4x-1$
+B.  $y=-4x+1$
+C.  $y=4x-1$
+D.  $y=4x+1$","To determine the equation of the line graphed, we need to determine the slope and the y-intercept.
+
+Based on the program code provided, the line is drawn from point (-2,-9) to point (4,15).
+
+We can calculate the slope (m) using the formula:
+
+\[ m = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} \]
+
+Where (x1, y1) is (-2, -9) and (x2, y2) is (4, 15).
+
+\[ m = \frac{15 - (-9)}{4 - (-2)} = \frac{24}{6} = 4 \]
+
+So, the slope of the line is 4.
+
+Now we need to find the y-intercept. We can use either of the two points to find it, plugging them into the equation y = mx + b. Using the point (x1, y1) = (-2, -9):
+
+\[ -9 = 4(-2) + b \]
+\[ -9 = -8 + b \]
+\[ b = -1 \]
+
+So the y-intercept is -1.
+
+Combining this information, we get the equation of the line as y = 4x - 1, which corresponds to answer C. $y=4x-1$
+",YES,True
+True,['D'],True,True,"[asy]
+import graph;
+size(300, 200, IgnoreAspect);
+real[] x = {0, 2, 3, 6, 7,  9, 10};
+real[] y = {2, 5, 1, 4, 8, 3, 6};
+pen graphPen = black + 1.5bp;
+pen dotPen = black + 4bp;
+draw(graph(x, y), graphPen);
+for (int i = 0; i < x.length; ++i) {
+    dot((x[i], y[i]), dotPen);
+}
+xaxis(""Hours since 8:00 a.m."", 0,10, Ticks(Label(fontsize(8pt)), 1.0));
+yaxis(""Number of books"", 0,10, Ticks(Label(fontsize(8pt)), 1.0));
+[/asy]
+What is the minimum number of books in the book drop recorded during this time?  
+A. 5  
+B. 4  
+C. 3  
+D. 1","According to the code provided, the plot created is a graph with several ordered pairs (x, y) given in two arrays:
+
+x = {0, 2, 3, 6, 7,  9, 10}
+y = {2, 5, 1, 4, 8, 3, 6}
+
+These pairs represent the number of books in the book drop at different hours since 8:00 a.m. We are interested in finding the minimum y-value, which represents the minimum number of books recorded during this time.
+
+Looking at the y array, we can see the values:
+
+y = {2, 5, 1, 4, 8, 3, 6}
+
+The smallest value in the y array is 1.
+
+Thus, the minimum number of books recorded in the book drop during this time period is 1, which corresponds to option:
+
+D. 1",YES,True
+True,['D'],True,False,"$\sqrt{m^2} = \sqrt{64^2}$
+What is the positive solution to the given equation?  
+A. 4  
+B. 8  
+C. 16  
+D. 64","The square root of a number squared is the absolute value of the number. Therefore, for the equation $\sqrt{m^2} = \sqrt{64^2}$, we can simplify as follows:
+
+On the right side, we have $\sqrt{64^2}$ which simplifies to the absolute value of 64. Since 64 is positive, its absolute value is simply 64.
+
+So, the equation becomes:
+
+$|m| = 64$
+
+The absolute value of a number can be either positive or negative and still square to give the same positive result. But since you're asking for the positive solution, we can discard the negative possibility and just have:
+
+$m = 64$
+
+Therefore, the positive solution to the given equation is:
+
+D. 64",YES,True
+True,['B'],True,True,"x: -4, -1, 1
+$f(x)$: 0,3,5
+For the polynomial function $f$, the table shows some values of x and their corresponding values of $f(x)$. Which of the following could be the graph of y equals $f(x)$?
+A. [asy]
+import graph;
+size(9cm);
+real f(real x) { return 0.5*x^3 - 2*x^2; }
+xaxis(""$x$"", -5,5, Ticks(Label(fontsize(10pt)), 2.0), Arrow);
+yaxis(""$y$"", -5,5, Ticks(Label(fontsize(10pt)), 2.0), Arrow);
+draw(graph(f, -2.5, 2.5), linewidth(1) + black);
+limits((-7, -7), (7, 7), Crop);
+[/asy]
+B. [asy]
+import graph;
+size(9cm);
+real f(real x) { return 0.2782 + 2.1965*x  + 5.2361*x^2 + 1.1786*x^3; }
+xaxis(""$x$"", -5,6, Ticks(Label(fontsize(10pt)), 2.0), Arrow);
+yaxis(""$y$"", -2,10, Ticks(Label(fontsize(10pt)), 2.0), Arrow);
+draw(graph(f, -5, 5), linewidth(1) + black);
+limits((-6, -2), (4, 10), Crop);
+[/asy]
+C. [asy]
+import graph;
+size(9cm);
+real f(real x) { return 0.3*x - 3.825*x^2 - 0.975*x^3; }
+xaxis(""$x$"", -5,6, Ticks(Label(fontsize(10pt)), 2.0), Arrow);
+yaxis(""$y$"", -10,3, Ticks(Label(fontsize(10pt)), 2.0), Arrow);
+draw(graph(f, -5, 5), linewidth(1) + black);
+limits((-6, -10), (4, 3), Crop);
+[/asy]
+D. [asy]
+import graph;
+size(9cm);
+real f(real x) { return 0.6667*x  + 1.5*x^2 - 0.4167*x^3;}
+xaxis(""$x$"", -5,6, Ticks(Label(fontsize(10pt)), 2.0), Arrow);
+yaxis(""$y$"", -2,10, Ticks(Label(fontsize(10pt)), 2.0), Arrow);
+draw(graph(f, -5, 5), linewidth(1) + black);
+limits((-6, -2), (4, 10), Crop);
+[/asy]","To determine which graph corresponds to the polynomial function f, we should check the given points on each graph.
+
+The points given are:
+- \( f(-4) = 0 \)
+- \( f(-1) = 3 \)
+- \( f(1) = 5 \)
+
+For all the graphs (A, B, C, and D), we need to see which one passes through these coordinates: (-4, 0), (-1, 3), and (1, 5).
+
+However, since I cannot directly view the graphs provided in your question, I can instead describe what to look for in the correct graph:
+
+1. The graph should pass through the point (-4, 0). This is the x-intercept of the graph, where the graph crosses the x-axis.
+2. The graph should be going upwards as it passes through the point (-1, 3), indicating that f(x) is increasing at x = -1.
+3. The graph should also pass through the point (1, 5), and we would expect the curve to show f(x) is continuing to increase because we have only three points and they are increasing as x increases.
+
+Now, let's try to eliminate the wrong options based on the three points:
+
+- For Graph A, check if there is an x-intercept at x = -4, and if the graph passes through the points (-1, 3) and (1, 5).
+- For Graph B, C, and D, do the same checks.
+
+The correct graph will be the one that matches all three points. You will need to visually inspect the graphs. You can use the given function definitions in the graph code as hints but keep in mind that the function definitions in the Asymptote code might not necessarily correspond to the actual graph because it may also be obfuscated or unrelated to the exact function you're looking for. Hence, focus on the points and the shape of the graph through those points.",NO,False
+True,['A'],True,True,"[asy]
+import graph;
+size(300, 200, IgnoreAspect);
+real[] x = {1,2,3,5,6,7};
+real[] y = {5,6,6, 12, 13, 18};
+pen graphPen = black + 1.5bp;
+pen dotPen = black + 4bp;
+for (int i = 0; i < x.length; ++i) {
+    dot((x[i], y[i]), dotPen);
+}
+xaxis(""x"", 0,8, Ticks(Label(fontsize(8pt)), 1.0));
+yaxis(""y"", 0,20, Ticks(Label(fontsize(8pt)), 1.0));
+draw((1, 4)--(7,16));
+[/asy]
+The scatterplot shows the relationship between two variables, x and y. A line of best fit for the data is also shown. For x= 4, which of the following is closest to the y-value predicted by the line of best fit?
+A. 10  
+B. 12  
+C. 14  
+D. 16","The line of best fit shown in the scatterplot appears to begin at approximately (1, 4) and end at approximately (7, 16). This gives us two points on the line: P1 = (1, 4) and P2 = (7, 16). We can use these two points to find the slope of the line (m) using the formula:
+
+m = (y2 - y1) / (x2 - x1)
+
+Substitute the given points into the formula:
+
+m = (16 - 4) / (7 - 1) = 12 / 6 = 2
+
+Now we have the slope of the line, which tells us that for each unit increase in x, y increases by 2 units. 
+
+Since we have the slope and a point on the line, we can use the point-slope form of a line, which is:
+
+y - y1 = m(x - x1)
+
+We can use P1 (1, 4) to find the equation of the line:
+
+y - 4 = 2(x - 1)
+y - 4 = 2x - 2
+y = 2x + 2
+
+Now that we have the equation of the line, we can plug in x = 4 to find the corresponding value of y:
+
+y = 2(4) + 2
+y = 8 + 2
+y = 10
+
+So for x = 4, the y-value predicted by the line of best fit is closest to 10.
+
+The correct answer is A. 10.",YES,True
+True,['A'],True,False,"In a group of 8 children, 2 have freckles and 6 do not have freckles. If one of the 8 children is selected at random, what is the probability of selecting a child who has freckles?  
+A. 0.25  
+B. 0.33  
+C. 0.50  
+D. 0.75","To find the probability of selecting a child with freckles, we use the formula:
+
+Probability = (Number of favorable outcomes) / (Total number of possible outcomes)
+
+In this case, the favorable outcomes are the number of children with freckles, which is 2. The total number of possible outcomes is the total number of children, which is 8.
+
+So the probability P of selecting a child with freckles is:
+
+P = 2 / 8
+
+We can simplify this fraction by dividing both the numerator and the denominator by 2:
+
+P = (2 ÷ 2) / (8 ÷ 2)
+P = 1 / 4
+
+As a decimal, 1/4 is equivalent to 0.25. Therefore, the answer is A. 0.25.",YES,True
+True,['C'],True,False,"The ratio of Jupiter’s diameter to Saturn’s diameter is  approximately 1.2 to 1. The diameter of Jupiter is 143,000 kilometers. What is the diameter, to the nearest ten thousand kilometers, of Saturn?  
+A. 24,000  
+B. 83,000  
+C. 120,000  
+D. 170,000","Given that the ratio of Jupiter's diameter to Saturn's diameter is approximately 1.2 to 1, we can set up a proportion to solve for the diameter of Saturn:
+
+Jupiter's diameter : Saturn's diameter = 1.2 : 1
+
+Let S represent Saturn's diameter. Then we have:
+
+143,000 km (Jupiter's diameter) : S km (Saturn's diameter) = 1.2 : 1
+
+To solve for S, set up the proportion as an equation:
+
+143,000 km / S km = 1.2 / 1
+
+Now, solve for S:
+
+S = 143,000 km / 1.2
+S ≈ 119,166.67 km
+
+The question asks for the diameter of Saturn to the nearest ten thousand kilometers. So, rounding 119,166.67 to the nearest ten thousand gives us:
+
+120,000 km
+
+Therefore, the correct answer is:
+
+C. 120,000",YES,True
+True,['D'],True,True,"In the given scatterplot, a line of best fit for the data is shown.
+[asy]
+import graph;
+size(300, 200, IgnoreAspect);
+real[] x = {0.25, 0.5, 1.25, 1.75,2, 2.25, 2.75, 3, 4};
+real[] y = {2, 3.25, 3, 4.75, 3.75, 3.75, 5.25, 4.5, 6.5};
+pen graphPen = black + 1.5bp;
+pen dotPen = black + 4bp;
+for (int i = 0; i < x.length; ++i) {
+    dot((x[i], y[i]), dotPen);
+}
+xaxis(""x"", 0,8, Ticks(Label(fontsize(8pt)), 1.0));
+yaxis(""y"", 0,20, Ticks(Label(fontsize(8pt)), 1.0));
+draw((0, 2)--(4,6));
+[/asy]
+Which of the following is an equation for the line of best fit?  
+A. $y=x$
+B. $y=2x$$
+C. $y=1+x$ 
+D. $y=2+x$","Based on the scatterplot and the line of best fit drawn on the plot, we can determine the equation of the line by looking at the slope and y-intercept.
+
+According to the coordinates mentioned on the plot, the line goes through the points (0, 2) and (4, 6). To find the slope, we can use the formula: 
+
+\[ \text{slope} = \frac{\Delta y}{\Delta x} \]
+
+Using the two points:
+
+\[ \Delta y = 6 - 2 = 4 \]
+\[ \Delta x = 4 - 0 = 4 \] 
+
+So the slope is:
+
+\[ \frac{4}{4} = 1 \]
+
+Now we know the slope (m) of the line is 1. The y-intercept (the point where the line crosses the y-axis) is (0, 2). This means the equation of the line is:
+
+\[ y = mx + b \]
+\[ y = 1x + 2 \]
+
+Which gives us the equation of the line of best fit. Thus, the correct answer is:
+
+D. $y = 2 + x$",YES,True
+True,['D'],True,False,"$x$: 0, 10, 15
+$f(x)$ 13, 9,3
+For the linear function f, the table shows three values of x and their corresponding values of $f(x)$. Which equation defines $f$?
+A. $f(x) = -4x+13$
+B. $f(x) = -2x+13$
+C. $f(x) = -rac{5}{2}x+13$
+D. $f(x) = -rac{2}{5}x+13$","To find the equation that defines the linear function \( f \), we need to determine its slope and y-intercept. From the table, we have two pairs of points that we can use to calculate the slope:
+
+Point 1: \( (x_1, y_1) = (0, 13) \)
+Point 2: \( (x_2, y_2) = (10, 9) \)
+
+The slope \( m \) is given by the formula:
+\[ m = \frac{y_2 - y_1}{x_2 - x_1} \]
+
+Let's calculate it:
+\[ m = \frac{9 - 13}{10 - 0} \]
+\[ m = \frac{-4}{10} \]
+\[ m = -\frac{2}{5} \]
+
+To find the y-intercept \( b \), we can use the value of \( f(x) \) when \( x = 0 \) which is given in the table. Since \( f(0) = 13 \), the y-intercept \( b \) is 13.
+
+Now, we have the slope \( m = -\frac{2}{5} \) and \( y \)-intercept \( b = 13 \). Therefore, the equation of the linear function \( f \) is:
+
+\[ f(x) = mx + b \]
+\[ f(x) = -\frac{2}{5}x + 13 \]
+
+The correct answer is:
+
+D. \( f(x) = -\frac{2}{5}x+13 \)",YES,True
+True,['D'],True,False,"$2-x^2 -x^2 - 2$
+Which of the following is equivalent to the given expression?  
+A. 0  
+B. 2  
+C. $-x^2$
+D. $-2x^2$","To find the equivalent expression, combine like terms in the given expression:
+
+$2 - x^2 - x^2 - 2$
+
+Combine the constant terms: $2 - 2 = 0$
+
+Combine the $x^2$ terms: $-x^2 - x^2 = -2x^2$
+
+The resulting expression is:
+
+$0 - 2x^2$
+
+Which simplifies to:
+
+$-2x^2$
+
+Therefore, the equivalent expression is:
+
+D. $-2x^2$",YES,True
+True,['B'],True,False,"A data set consists of 100 values. The least value is 30, and the greatest two values are 80 and 125. If the value 125 is removed from the original data set to create a new data set with 99 values, which statement must be true?
+A. The means of the two data sets will be the same.  
+B. The mean of the new data set will be less than the mean of the original data set.  
+C. The medians of the two data sets will be the same.  
+D. The median of the new data set will be less than the median of the original data set.","B. The mean of the new data set will be less than the mean of the original data set.
+
+Explanation:
+
+Removing the largest value (which is 125) from the data set without replacing it will reduce the sum of all the values in the data set. Since the mean is the sum of all values divided by the number of values, the mean of the new data set (with 99 values) will be less than the mean of the original data set (with 100 values), because you are dividing a smaller sum by a slightly smaller count, but the impact of the large value being removed is greater than the impact of reducing the divisor by 1.
+
+The other options can be dismissed:
+
+A. Incorrect because the means will not be the same. Removing a number from the data set (especially a number as large as 125 relative to the rest) will change the sum of the values and therefore the mean.
+
+C. Incorrect because we cannot be sure about the median without knowing the distribution of the other values. If the median is between the 50th and 51st values in the sorted list for the original data set, removing the largest value (which is the 100th value in a sorted list) will not affect the median's position. So the median could be the same, but we can't confirm this without additional information.
+
+D. Incorrect because removing the largest value in the data set, in this case, won't necessarily affect the median. As mentioned for option C, we cannot be sure how the median will be affected unless we know more about the distribution of the other values in the data set. If the median were towards the higher end and the highest value is removed, the median's value could stay the same if it's lower than the highest two values (which in this case, it would be).",YES,True
+True,['B'],True,True,"A forestry department measures tree trunk diameter, in inches, at a constant height from the ground for each tree growing in a certain area. The data for 95 of these trees are summarized in the histogram. The first bar represents trees with a trunk diameter less than 6 inches. The second bar represents trees with a trunk diameter of at least 6 inches but less than 12 inches, and so on.
+[asy]
+import graph;
+size(300, 200, IgnoreAspect);
+real[] x = {6,12,18,24,30,36,42};
+real[] y = {5,10,30,25,15,5,5};
+draw(box((0,0), (6,5)));
+draw(box((6,0), (12,10)));
+draw(box((12,0), (18,30)));
+draw(box((18,0), (24,25)));
+draw(box((24,0), (30,15)));
+draw(box((30,0), (36,5)));
+draw(box((36,0), (42,5)));
+xaxis(""Tree trunk diameter (inches)"", 0,42, Ticks(Label(fontsize(8pt)), 6.));
+yaxis(""Frequency"", 0,35, Ticks(Label(fontsize(8pt)), 5.0));
+[/asy]
+Approximately what percentage of these trees have a trunk diameter less than 6 inches?  
+A. 2.6%  
+B. 5.3%  
+C. 10.5%  
+D. 15.8%","To determine the percentage of trees with a trunk diameter less than 6 inches, we need to look at the frequency of trees in the first bar of the histogram and compare this to the total number of trees.
+
+From the histogram, the frequency of trees with diameters less than 6 inches is represented by the height of the first bar, which is 5. This means there are 5 trees with diameters less than 6 inches.
+
+The total number of trees is 95, as given in the question.
+
+Now we calculate the percentage by dividing the number of trees with diameters less than 6 inches by the total number of trees, and then multiplying by 100 to convert to a percentage:
+
+Percentage = (Number of trees with diameter < 6 inches / Total number of trees) × 100
+Percentage = (5 / 95) × 100
+
+To make it easier to calculate, we can simplify the fraction 5/95 by dividing both the numerator and denominator by 5:
+
+Percentage = (1 / 19) × 100
+
+Now we divide 100 by 19 to find the percentage:
+
+Percentage ≈ 5.26%
+
+The closest answer choice to this calculated percentage is B. 5.3%. Hence, the correct answer is:
+
+B. 5.3%",YES,True
+True,['C'],True,True,"A forestry department measures tree trunk diameter, in inches, at a constant height from the ground for each tree growing in a certain area. The data for 95 of these trees are summarized in the histogram. The first bar represents trees with a trunk diameter less than 6 inches. The second bar represents trees with a trunk diameter of at least 6 inches but less than 12 inches, and so on.
+[asy]
+import graph;
+size(300, 200, IgnoreAspect);
+real[] x = {6,12,18,24,30,36,42};
+real[] y = {5,10,30,25,15,5,5};
+draw(box((0,0), (6,5)));
+draw(box((6,0), (12,10)));
+draw(box((12,0), (18,30)));
+draw(box((18,0), (24,25)));
+draw(box((24,0), (30,15)));
+draw(box((30,0), (36,5)));
+draw(box((36,0), (42,5)));
+xaxis(""Tree trunk diameter (inches)"", 0,42, Ticks(Label(fontsize(8pt)), 6.));
+yaxis(""Frequency"", 0,35, Ticks(Label(fontsize(8pt)), 5.0));
+[/asy]
+Which of the following is a possible value for the median trunk diameter, in inches, of these trees?  
+A. 10  
+B. 15  
+C. 20  
+D. 25","The median is the value in the center of the dataset when it is ordered from smallest to largest. For 95 trees, the median will be the value of the 48th tree when ordered by diameter since 47 trees will be on each side (95 + 1 = 96, then 96 / 2 = 48). We need to find which range of trunk diameters this 48th tree would fall under.
+
+Let's count the number of trees from the histogram until we reach or surpass the 48th tree:
+
+- Less than 6 inches: 5 trees 
+- At least 6 inches but less than 12: 10 trees (cumulative total: 5 + 10 = 15 trees)
+- At least 12 inches but less than 18: 30 trees (cumulative total: 15 + 30 = 45 trees)
+- At least 18 inches but less than 24: 25 trees (cumulative total: 45 + 25 = 70 trees)
+
+At this point, we've passed the 48th tree. The critical range is when the cumulative count is between 45 and 70, which occurs in the ""at least 18 inches but less than 24 inches"" range. Therefore, the median must be within this diameter range. 
+
+Options A, B, and D (10, 15, and 25 inches, respectively) are outside this interval, but C (20 inches) falls within the 18 to 24 inches range.
+
+The correct answer is:
+C. 20",YES,True
+True,['C'],True,False,"The three candidates who ran for a city council position in Memphis in 2015 received a total of 14,705 votes. The ratio of votes for the first candidate to votes for the second candidate was approximately 4 to 1. The ratio of votes for the first candidate to votes for the third candidate was approximately 100 to 13. Based on this information, which ff the following is closest to the number of votes received by the first candidate?  
+A. 1,911  
+B. 3,676  
+C. 10,656  
+D. 14,601","Let's use the information given to solve for the number of votes received by the first candidate.
+
+We know the total number of votes is \(14,705\), and we have the ratios:
+- \(4:1\) for the first candidate to the second candidate
+- \(100:13\) for the first candidate to the third candidate
+
+Using algebra, we can create a system of equations. Let the number of votes for the first candidate be \(x\), for the second candidate be \(y\), and for the third candidate be \(z\). According to the ratio for the first and second candidates:
+
+\[ \frac{x}{y} = \frac{4}{1} \]
+
+So:
+
+\[ y = \frac{x}{4} \]
+
+Using the ratio for the first and third candidates:
+
+\[ \frac{x}{z} = \frac{100}{13} \]
+
+So:
+
+\[ z = \frac{13x}{100} \]
+
+Since the total votes \(x + y + z = 14,705\), we can plug in \(y\) and \(z\):
+
+\[ x + \frac{x}{4} + \frac{13x}{100} = 14,705 \]
+
+Multiply everything by 100 to clear the denominators:
+
+\[ 100x + 25x + 13x = 1,470,500 \]
+
+Combine terms:
+
+\[ 138x = 1,470,500 \]
+
+Now divide both sides by 138 to solve for \(x\):
+
+\[ x = \frac{1,470,500}{138} \]
+
+Now we can solve this using a calculator.
+
+\[ x ≈ \frac{1,470,500}{138} ≈ 10,655.07 \]
+
+The value closest to the number of votes received by the first candidate x is:
+
+C. \(10,656\)",YES,True
+True,['D'],True,False,"Kai went on a bike ride. During the first mile of his bike ride, he rode at a constant speed, s. After the first mile of his ride, Kai increased his speed by 100%. Which of the following expressions represents the speed Kai rode his bike after the first mile, in  
+terms of s ? 
+A. s  
+B. s + 1  
+C. 1.5s  
+D. 2s","When Kai increases his speed by 100%, he is doubling his original speed. An increase of 100% means that whatever the original amount was, it's increased by that same amount again. 
+
+So if his original speed was s, and he increases it by 100% (which is the same as s), the new speed is:
+
+s (original speed) + 1 * s (100% increase) = s + s = 2s
+
+So the expression that represents the speed Kai rode his bike after the first mile, in terms of s, is 
+
+D. 2s",YES,True
+True,['D'],True,True,"Which of the following dot plots represents the data set with the greatest standard deviation?
+A. [asy]
+import graph;
+size(300, 200, IgnoreAspect);
+real[] x = {4,5,6,6,7,7,8,8,8};
+real[] y = {1,1,1,2,1,2,1,2,3};
+pen dotPen = black + 4bp;
+for (int i = 0; i < x.length; ++i) {
+    dot((x[i], y[i]), dotPen);
+}
+xaxis("""", 0,9, Ticks(Label(fontsize(8pt)), 1.));
+[/asy]
+B. [asy]
+import graph;
+size(300, 200, IgnoreAspect);
+real[] x = {3,4,4,4,4,5,5,5,5};
+real[] y = {1,1,2,3,4,1,2,3,4};
+pen dotPen = black + 4bp;
+for (int i = 0; i < x.length; ++i) {
+    dot((x[i], y[i]), dotPen);
+}
+xaxis("""", 0,9, Ticks(Label(fontsize(8pt)), 1.));
+[/asy]
+C.[asy]
+import graph;
+size(300, 200, IgnoreAspect);
+real[] x = {2,2,3,3,4,4,5,5,5};
+real[] y = {1,2,1,2,1,2,1,2,3};
+pen dotPen = black + 4bp;
+for (int i = 0; i < x.length; ++i) {
+    dot((x[i], y[i]), dotPen);
+}
+xaxis("""", 0,9, Ticks(Label(fontsize(8pt)), 1.));
+[/asy]
+D. [asy]
+import graph;
+size(300, 200, IgnoreAspect);
+real[] x = {1,1,3,3,4,5,5,8,8};
+real[] y = {1,2,1,2,1,1,2,1,2};
+pen dotPen = black + 4bp;
+for (int i = 0; i < x.length; ++i) {
+    dot((x[i], y[i]), dotPen);
+}
+xaxis("""", 0,9, Ticks(Label(fontsize(8pt)), 1.));
+[/asy]","Standard deviation is a measure of how spread out data values are. If the values are close to the mean, the standard deviation is small. If the values are spread out over a wider range, the standard deviation is larger.
+
+Let's appraise the spread of the values in each plot:
+
+A. The data points are distributed closely around the central values (6, 7, 8) with only slight variation.
+B. The data points are more spread out but still relatively close to the central values (4, 5), with a range from 3 to 5.
+C. The data points have a similar spread to plot B (2 to 5), but with a slight cluster towards the center.
+D. The data points are widely spread out, ranging from 1 to 8, with gaps between clusters.
+
+Plot D shows the greatest range and variation in data points, thus it represents the data set with the greatest standard deviation. The more the points are spread out from the mean, the higher the standard deviation will be. In plot D, with some data points situated far from the others, the spread is greater than in any other plot presented.",YES,True
+True,['B'],True,False,"A state representative wants to increase the amount of driving practice time required before a student can earn a driver’s license. The representative surveyed a random sample of 50 from the 250 students taking the driver’s education class at Jefferson High School. The survey reported that 62% of students taking the class agree that driving practice time should be increased, with an associated margin of error of 5%.  
+Based on the results of the survey, how many of the students surveyed agree with the proposed change?  
+A. 19  
+B. 31  
+C. 124  
+D. 155","To find out how many of the students surveyed agree with the proposed change, multiply the percentage who agree by the number of students surveyed. 
+
+According to the survey, 62% of the 50 students surveyed agree with the proposed change. The calculation is: 
+
+0.62 (62%) * 50 students = 31 students
+
+So, the answer is B. 31 students.",YES,True
+True,['D'],True,False,"A state representative wants to increase the amount of driving practice time required before a student can earn a driver’s license. The representative surveyed a random sample of 50 from the 250 students taking the driver’s education class at Jefferson High School. The survey reported that 62% of students taking the class agree that driving practice time should be increased, with an associated margin of error of 5%.
+Which of the following populations can the results of the survey at Jefferson High School be extended to?
+A. Students at any US high school  
+B. Students taking a driver’s education class at any US high school  
+C. Students at Jefferson High School  
+D. Students taking a driver’s education class at Jefferson High School","D. Students taking a driver's education class at Jefferson High School
+
+The survey was conducted with a sample of students taking the driver’s education class at Jefferson High School, therefore the results are most accurately generalized to this specific population. Extending the results to larger populations, such as all students at any US high school or even all students taking a driver's education class at any US high school, would be inappropriate without considering differences in demographics, attitudes, and education systems that might exist.",YES,True
+True,['D'],True,False,"Which quadratic equation has exactly one distinct real solution?
+A. $x^2 + 4x + 16 = 0$
+B. $x^2 -8x - 16 = 0$
+C. $x^2 -6x - 16 = 0$
+D. $x^2 -8x + 16 = 0$","A quadratic equation $ax^2 + bx + c = 0$ has exactly one distinct real solution when its discriminant, $b^2 - 4ac$, equals zero. This is because the discriminant determines the nature and number of solutions: if it's positive, there are two distinct real solutions; if it's zero, there's one real solution (a repeated root); and if it's negative, there are no real solutions, only two complex solutions.
+
+Let's determine the discriminant for each answer choice:
+
+A. $b^2 - 4ac = 4^2 - 4(1)(16) = 16 - 64 = -48$ (two complex solutions)
+
+B. $b^2 - 4ac = (-8)^2 - 4(1)(-16) = 64 + 64 = 128$ (two distinct real solutions)
+
+C. $b^2 - 4ac = (-6)^2 - 4(1)(-16) = 36 + 64 = 100$ (two distinct real solutions)
+
+D. $b^2 - 4ac = (-8)^2 - 4(1)(16) = 64 - 64 = 0$ (exactly one distinct real solution, a repeated root)
+
+Therefore, the correct answer is:
+
+D. $x^2 -8x + 16 = 0$",YES,True
+True,['A'],True,True,"In a school debate club, each student earns 2 credits if they participate in a debate and lose, and 4 credits if they participate in a debate and win. A student receives an award after earning 100 credits. The credits needed for the award can be modeled by the equation 2𝑥𝑥 + 4𝑦𝑦 = 100, where x is the number of times a student participated in a debate and lost, and y is the number of times the student participated in a debate and won. Which graph represents this situation?
+A. [asy]
+import graph;
+size(300, 200, IgnoreAspect);
+draw((0,25)--(50,0));
+xaxis(""x"", 0,100, Ticks(Label(fontsize(8pt)), 25.));
+yaxis(""y"", 0,100, Ticks(Label(fontsize(8pt)), 25.));
+[/asy]
+B. [asy]
+import graph;
+size(300, 200, IgnoreAspect);
+draw((0,50)--(25,0));
+xaxis(""x"", 0,100, Ticks(Label(fontsize(8pt)), 25.));
+yaxis(""y"", 0,100, Ticks(Label(fontsize(8pt)), 25.));
+[/asy]
+C. [asy]
+import graph;
+size(300, 200, IgnoreAspect);
+draw((0,50)--(100,0));
+xaxis(""x"", 0,100, Ticks(Label(fontsize(8pt)), 25.));
+yaxis(""y"", 0,100, Ticks(Label(fontsize(8pt)), 25.));
+[/asy]
+D. [asy]
+import graph;
+size(300, 200, IgnoreAspect);
+draw((0,100)--(50,0));
+xaxis(""x"", 0,100, Ticks(Label(fontsize(8pt)), 25.));
+yaxis(""y"", 0,100, Ticks(Label(fontsize(8pt)), 25.));
+[/asy]","The equation that models the credits needed for the award is 2x + 4y = 100. We can graph this equation by finding the intercepts:
+
+When y = 0 (no wins):
+2x + 4(0) = 100
+2x = 100
+x = 100/2
+x = 50
+
+When x = 0 (no losses):
+2(0) + 4y = 100
+4y = 100
+y = 100/4
+y = 25
+
+This gives us two points: (50, 0) and (0, 25). We can now use these points to determine which graph represents the situation.
+
+Graph A shows a line that intersects the y-axis at 25, but it extends beyond the x-axis at 50, which doesn't match our equation.
+Graph B shows a line that also intersects the y-axis at 25 but does not reach the correct point on the x-axis.
+Graph C shows a line that intersects the x-axis far beyond 50 and the y-axis at 50, which is incorrect.
+Graph D shows a line that intersects the x-axis at 50 and the y-axis at 25, which is consistent with our points (50, 0) and (0, 25).
+
+Therefore, the correct graph that represents the situation is:
+
+D. [asy]
+import graph;
+size(300, 200, IgnoreAspect);
+draw((0,25)--(50,0));
+xaxis(""x"", 0,100, Ticks(Label(fontsize(8pt)), 25.));
+yaxis(""y"", 0,100, Ticks(Label(fontsize(8pt)), 25.));
+[/asy]",NO,False
+True,['B'],True,False,"Rectangle X has a length of 12 centimeters (cm) and a width of 2.5 cm. Right triangle Y has a base of 10 cm. The area of rectangle X is three times the area of right triangle Y. What is the height, in cm, of right triangle Y?
+A. 1  
+B. 2  
+C. 3  
+D. 6","To find the height of right triangle Y, we first need to find the area of rectangle X.
+
+The area of the rectangle X is calculated as length times width, so:
+
+Area of Rectangle X = Length x Width
+Area of Rectangle X = 12 cm x 2.5 cm
+Area of Rectangle X = 30 cm²
+
+We are told that the area of rectangle X is three times the area of right triangle Y. Let's use A to denote the area of the triangle. So:
+
+3A = Area of Rectangle X
+3A = 30 cm²
+A = 30 cm² / 3
+A = 10 cm²
+
+The area of right triangle Y is one-half the product of its base and height. The formula to calculate the area of a triangle is:
+
+Area of Triangle = (Base x Height) / 2
+
+For right triangle Y, we know the area (A) is 10 cm² and the base is 10 cm, so:
+
+10 cm² = (10 cm x Height) / 2
+
+Now we need to solve this equation for the height.
+
+20 cm² = 10 cm x Height
+Height = 20 cm² / 10 cm
+Height = 2 cm
+
+So the correct answer is:
+
+B. 2",YES,True
+True,['C'],True,False,"According to a 2008 study, there were five known subspecies of tigers, including the Amur and Bengal, living in the wild. Scientists estimated that there were a total of 4,000 tigers in the wild. Of these, 450 were Amur tigers and x were Bengal tigers. Which inequality represents all possible numbers of tigers in the wild in 2008 that belonged to the Bengal tiger subspecies?
+A. $5x \geq 4000$
+B. $rac{x}{5} \geq 4000$
+C. $1 \leq x \leq 3547$
+D. $3547 \leq x \leq 4000$","To determine the inequality representing all possible numbers of Bengal tigers in the wild in 2008, we must subtract the known number of Amur tigers from the total number of tigers:
+
+Total tigers in the wild = 4000
+Amur tigers in the wild = 450
+Bengal tigers in the wild = x
+
+We are asked for the number of Bengal tigers, so we need an inequality that ensures the total number of tigers (including other subspecies aside from Amur and Bengal) does not exceed 4000 (as no more than 4000 tigers are said to exist in total).
+
+Since we have 450 Amur tigers, the number of the remaining tigers (which includes Bengal tigers and any other subspecies):
+
+Remaining tigers = Total tigers - Amur tigers
+Remaining tigers = 4000 - 450
+Remaining tigers = 3550
+
+We don't have an exact count for the other subspecies, but since the question is focused on Bengal tigers, we need to ensure that the number of Bengal tigers plus the number of Amur tigers is at most equal to the total, and they are part of the remaining tigers. Hence, the number of Bengal tigers must be less than or equal to the number of remaining tigers:
+
+Bengal tigers (x) ≤ Remaining tigers
+x ≤ 3550
+
+However, since we are not given any specifics about how many tigers belong to the other three subspecies—and since it's possible there could be no other subspecies aside from Amur and Bengal tigers—the minimum number of Bengal tigers could be 1 (if every other tiger were an Amur tiger, which we know is not true, but we'll include this for the sake of a complete range).
+
+Therefore, the range for the number of Bengal tigers x would be:
+
+1 ≤ x ≤ 3550
+
+Of the options provided, option C is the closest one to this reasoning:
+
+C. $1 \leq x \leq 3547$
+
+However, note that there is a small discrepancy in the numbers here. According to our calculation, x should be less than or equal to 3550, but option C ends with 3547. This might be due to the fact that we haven't considered the presence of the other subspecies, which could make up the difference to equate to a total of 4000 tigers. Assuming there are at least 3 tigers from the other subspecies, this would adjust the inequality to match option C:
+
+1 ≤ x ≤ 3550 - 3 (tigers from other subspecies)
+1 ≤ x ≤ 3547
+
+Therefore, we can consider that option C is the intended answer based on the information given and it represents all possible numbers of Bengal tigers in the wild in 2008.
+",YES,True
+True,['C'],True,True,"Which of the following additional pieces of information provides enough information to prove whether triangle DEF is a right triangle?  
+[asy]
+size(200);
+pair D, E, F;
+D = (0, 0);
+E = (0, 3);
+F = (4, 0);
+draw(D--E--F--cycle);
+label(""D"", D, SW);
+label(""E"", E, NW);
+label(""F"", F, SE);
+label(""$3$"", midpoint(D--E), W);
+label(""$5$"", midpoint(E--F), NE);
+[/asy]
+I. The measure of angle D  
+II. The length of segment DF  
+A. I only  
+B. II only  
+C. Either I or II  
+D. Neither I nor II","Since we're trying to determine whether triangle DEF is a right triangle, we can use the Pythagorean theorem as a deciding factor. If DEF is a right triangle with angle D being the right angle, then the lengths of the sides must satisfy the equation
+
+\[ \text{DE}^2 + \text{DF}^2 = \text{EF}^2 \]
+
+From the information provided in the question, we know:
+
+DE = 3 (given)
+EF = 5 (given)
+
+Let's evaluate the two pieces of additional information to see if they give us enough information to prove whether triangle DEF is a right triangle:
+
+I. The measure of angle D  
+If we know the measure of angle D and it is 90 degrees, then that fact alone is enough to prove that triangle DEF is a right triangle. So, Option I is sufficient.
+
+II. The length of segment DF  
+If we know the length of segment DF, and it happens to satisfy the Pythagorean relationship (in case D is the right angle), then:
+
+\[ \text{DF}^2 = \text{EF}^2 - \text{DE}^2 \]
+\[ \text{DF}^2 = 5^2 - 3^2 \]
+\[ \text{DF}^2 = 25 - 9 \]
+\[ \text{DF}^2 = 16 \]
+\[ \text{DF} = 4 \]
+
+If DF turns out to be 4, then DE^2 + DF^2 would indeed equal EF^2, confirming that DEF is a right triangle. So, Option II is also sufficient.
+
+Therefore, knowing either the measure of angle D (I) or the length of segment DF (II) would provide enough information to prove whether triangle DEF is a right triangle.
+
+The correct answer is C. Either I or II.",YES,True
+True,['C'],True,False,"According to a model, if 100 people see a sequence of three letters, 87 of them will recall this sequence immediately after seeing it. The model predicts that this number will decrease by 14% of the number the previous second for each second that passes. Which function represents this model, where  $f(t)$ is the predicted number of people who will recall  the sequence after t seconds have passed?
+A. $f(t) = 14(0.87)^t$
+B. $f(t) = 87(0.14)^t$
+C. $f(t) = 87(0.86)^t$
+D. $f(t) = 87(1.14)^t$","To construct the function that represents this model, we need to understand the following information:
+
+1. Initially, 87 people remember the sequence (at t=0).
+2. For each second that passes, the number of people who remember the sequence decreases by 14% of the number from the previous second.
+
+This situation can be represented by an exponential decay function:
+
+$f(t) = P \cdot r^t$
+
+where
+- P is the initial number of people who remember the sequence (87 in this case)
+- r is the decay factor (1 minus the decay rate)
+- t is the time in seconds.
+
+The decay rate is given as 14%, which means that only 86% (100% - 14%) of the previous second's number will remember the sequence in the next second.
+
+So the decay factor r is 0.86 (which is 1 - 0.14). Now we can construct the function:
+
+$f(t) = 87 \cdot (0.86)^t$
+
+From the given options, the correct one that matches the above function is:
+
+C. $f(t) = 87(0.86)^t$",YES,True
+True,['A'],True,False,"One of the two linear equations in a system is $-6x + 7y = -6$. The system has no solution. Which equation could be the second equation in this system? 
+A. $6x - 7y = 0$ 
+B. $-rac{21x}{4} + rac{49y}{8} = -rac{21}{4}$ 
+C. $-rac{21x}{4} - 14y = 0$ 
+D. $6x - 7y = 6$","If a system of two linear equations has no solution, it means that the two lines represented by those equations are parallel. Two lines are parallel if they have the same slope and different y-intercepts.
+
+The slope-intercept form of a line is given by: y = mx + b, where m is the slope and b is the y-intercept.
+
+Let's put the given equation into slope-intercept form to find its slope:
+
+$-6x + 7y = -6$
+
+Let's isolate y:
+
+$7y = 6x - 6$
+
+$y = \frac{6}{7}x - \frac{6}{7}$
+
+The slope of this line is $\frac{6}{7}$, and the y-intercept is $-\frac{6}{7}$.
+
+Now let's examine the equations in the answer choices to see which one has the same slope and a different y-intercept:
+
+A. $6x - 7y = 0$ → Rearrange as $7y = 6x$ → $y = \frac{6}{7}x$ → Same slope $\frac{6}{7}$, y-intercept is 0 (different from $-\frac{6}{7}$)
+
+B. $-\frac{21x}{4} + \frac{49y}{8} = -\frac{21}{4}$ → Multiply through by 8 to clear fractions: $-42x + 49y = -42$ → Divide by 7: $-6x + 7y = -6$ → Same equation as given, not suitable for no solution scenario.
+
+C. $-\frac{21x}{4} - 14y = 0$ → Multiply by 4 to clear fractions: $-21x - 56y = 0$ → Divide by -7: $3x + 8y = 0$ → Slope is $-\frac{3}{8}$ (different slope).
+
+D. $6x - 7y = 6$ → Rearrange as $7y = 6x - 6$ → $y = \frac{6}{7}x - \frac{6}{7}$ → Same equation as given, not suitable for no solution scenario.
+
+The correct answer must have the same slope but a different y-intercept as the given equation. The only equation that fits this criterion is option A, which has the same slope $\frac{6}{7}$ but a different y-intercept (0 instead of $-\frac{6}{7}$), so the correct answer is:
+
+A. $6x - 7y = 0$",NO,False
+True,['A'],True,False,"A cottonwood tree had a trunk diameter of 2.00 inches at the time it was planted. The tree had a trunk diameter of 22.24 inches x years after it was planted. The equation $0.64x + 2 = 22.24$ represents this situation. Which statement is the best  
+interpretation of $0.64x$ in this context?
+A. The total increase of the tree’s trunk diameter x years after it was planted  
+B. The tree’s trunk diameter x years after it was planted  
+C. The maximum trunk diameter of the tree over its lifetime  
+D. The total increase of the tree’s trunk diameter each year after it was planted","The correct interpretation of $0.64x$ in this context is:
+
+A. The total increase of the tree’s trunk diameter x years after it was planted.
+
+This is because $0.64x$ represents the growth in trunk diameter from the initial diameter of 2.00 inches. The value 0.64 represents how much the trunk's diameter increases each year, and when you multiply it by the number of years (x), you obtain the total increase in trunk diameter over that time period. When you add this increase to the original diameter of 2.00 inches ($0.64x + 2$), it equals the tree's trunk diameter after x years, which is given as 22.24 inches.",YES,True
+True,['B'],True,True,"[asy]
+import graph;
+size(300, 200, IgnoreAspect);
+real f(real x) { return -x^2 + 40*x - 256; }
+xaxis(""$x$"", -5,40, Ticks(Label(fontsize(10pt)), 1), Arrow);
+yaxis(""$y$"", -5, 200, Ticks(Label(fontsize(10pt)), 1), Arrow);
+draw(graph(f, 0, 40), linewidth(1) + black);
+pen dotPen = black + 4bp;
+dot((8,0), dotPen);
+dot((32,0), dotPen);
+label(""(8,0)"", (8,0), S);
+label(""(32,0)"", (32,0), S);
+limits((-2, -15), (40, 200), Crop);
+[/asy]
+The graph of the equation $y=-x^2+40x-256$ is  
+shown. Which of the following equivalent forms of  
+the equation shows the maximum value of y as a  
+constant or coefficient?  
+A. $y=-(x-8)(x-32)$
+B. $y=-(x-20)^2+144$
+C. $y=-x(x-40)-256$
+D. $y=-x^2 +8*5x-32$","The equivalent form that shows the maximum value of \( y \) as a constant or coefficient is B. \( y=-(x-20)^2+144 \).
+
+This form is in the vertex form of a parabola equation, \( y=a(x-h)^2+k \), where \( (h,k) \) is the vertex of the parabola. The coefficient \( k \) represents the maximum or minimum value of \( y \) (maximum if the parabola opens downwards, minimum if it opens upwards). Since we have a negative sign in front of \( (x-20)^2 \), the parabola opens downwards, which means that \( k \) is the maximum value.
+
+In this case, \( k=144 \), which is the maximum value of \( y \) on the graph. This can be confirmed by completing the square for the original equation or by finding the vertex of the parabola, which is the point where the maximum value occurs. The vertex is at \( x=20 \), which is halfway between the x-intercepts (8 and 32). The maximum value of \( y \), as seen in form B, is indeed 144.
+
+The other forms do not explicitly show the maximum value of \( y \) as a constant or coefficient:
+
+A. \( y=-(x-8)(x-32) \) shows the x-intercepts.
+C. \( y=-x(x-40)-256 \) is a factored form that doesn't reveal the maximum value of \( y \).
+D. \( y=-x^2 +8*5x-32 \) is not properly simplified and does not reveal the maximum \( y \) value.
+
+Therefore, the correct answer is B. \( y=-(x-20)^2+144 \).",YES,True
+True,['B'],True,False,"If $rac{x-3}{7} = rac{x-3}{9}$, the value of $x - 3$ is between which of the following pairs of values? 
+A. -7 and -9 
+B. -1 and 1 
+C. 2.5 and 3.5 
+D. 6.75 and 9.25","To find the value of $x - 3$, we can analyze the given equation $\frac{x-3}{7} = \frac{x-3}{9}$.
+
+If we assume $x - 3$ is a non-zero number, this equation implies a contradiction, because if $x - 3$ is the same non-zero number in both the numerator of the left-hand side and the right-hand side, then dividing by 7 would result in a larger number than dividing by 9. Hence, for the equation to hold true, $x - 3$ must be equal to 0, which means that both sides of the equation would equal zero.
+
+Thus, $x - 3 = 0$.
+
+Since $x - 3 = 0$ is a single value, it does not really fall between any pair of values. But if we look at the options provided, the closest range that contains the value 0 is:
+
+B. -1 and 1
+
+So $x - 3$ is between -1 and 1.",YES,True
+True,['20'],False,False,"An object has a mass of 200 grams and a volume of 10 cubic centimeters. What is the density, in grams per cubic centimeter, of the object?","Density is defined as mass per unit volume. The formula to calculate density (ρ) is:
+
+ρ = mass / volume
+
+Given the mass of the object is 200 grams (g) and the volume is 10 cubic centimeters (cm³), we can plug these values into the formula:
+
+ρ = 200 g / 10 cm³
+
+When we divide 200 grams by 10 cubic centimeters, we get:
+
+ρ = 20 g/cm³
+
+So, the density of the object is 20 grams per cubic centimeter.",YES,True
+True,['4'],False,False,"An artist decorates square plates using the same pattern of blue and green tiles, where the ratio of blue to green tiles is 3 to 2. For a certain plate, the artist uses 120 blue tiles and $20n$ green tiles. What is the value of n?","The ratio of blue to green tiles used by the artist is 3 to 2. If the artist uses 120 blue tiles, we can set up a proportion to find the number of green tiles represented by \( 20n \).
+
+Let the number of green tiles be \( G \), then:
+
+\[
+\frac{\text{Blue tiles}}{\text{Green tiles}} = \frac{3}{2}
+\]
+
+\[
+\frac{120}{G} = \frac{3}{2}
+\]
+
+Now, solve for \( G \) by cross-multiplying:
+
+\[
+2 \times 120 = 3 \times G
+\]
+
+\[
+240 = 3G
+\]
+
+\[
+\frac{240}{3} = G
+\]
+
+\[
+80 = G
+\]
+
+We are told that the number of green tiles, which is 80, is equal to \( 20n \):
+
+\[
+20n = 80
+\]
+
+Now, to solve for \( n \), divide both sides by 20:
+
+\[
+n = \frac{80}{20}
+\]
+
+\[
+n = 4
+\]
+
+Hence, the value of \( n \) is 4.",YES,True
+True,['6'],False,False,"$y=3x+9$
+$y=-3x+3$
+The solution to the given system of equations is (x,y). What is the value of y?","To find the value of y in the given system of equations, we need to solve the system. Here are the two equations:
+
+1. y = 3x + 9
+2. y = -3x + 3
+
+Since both equations equal y, we can set them equal to each other:
+
+3x + 9 = -3x + 3
+
+Now, solve for x:
+
+Add 3x to both sides to get all x terms on one side:
+
+3x + 9 + 3x = -3x + 3 + 3x
+6x + 9 = 3
+
+Next, subtract 9 from both sides to isolate the x terms:
+
+6x + 9 - 9 = 3 - 9
+6x = -6
+
+Finally, divide by 6 to solve for x:
+
+6x / 6 = -6 / 6
+x = -1
+
+Now that we know x = -1, we substitute this into either of the original equations to find the value of y. Let's use the first equation:
+
+y = 3x + 9
+y = 3(-1) + 9
+y = -3 + 9
+y = 6
+
+So the solution to the given system of equations is (x, y) = (-1, 6), and the value of y is 6.",YES,True
+True,"['5/8', '.625']",False,False,"A circle has been divided into three nonoverlapping regions: I, II, and III. The area of region I is $4\pi$ square centimeters ($cm^2$), the area of region II is $12\pi$ $cm^2$, and the area of region III is  $16\pi$ $cm^2$ If a point in the circle is selected at random,  what is the probability of selecting a point that does not lie in region II? (Express your answer as a  
+decimal or fraction, not as a percent.)","To find the probability of not selecting a point in region II, we must first determine the total area of the circle and then subtract the area of region II. The total area of the circle would be the sum of the areas of the three regions:
+
+Area of region I: $4\pi \,cm^2$
+Area of region II: $12\pi \,cm^2$
+Area of region III: $16\pi \,cm^2$
+
+Total area of the circle = Area of region I + Area of region II + Area of region III
+Total area = $4\pi + 12\pi + 16\pi = 32\pi \,cm^2$
+
+Now, to find the probability of not selecting a point in region II, we subtract the area of region II from the total area and then divide by the total area:
+
+Probability (not in region II) = (Total area - Area of region II) / Total area
+Probability (not in region II) = $(32\pi - 12\pi) / 32\pi$
+Probability (not in region II) = $20\pi / 32\pi$
+
+Since we are dividing by $\pi$ on both the numerator and denominator, the $\pi$ cancels out:
+
+Probability (not in region II) = $20 / 32$
+
+Now we reduce the fraction by dividing both the numerator and denominator by their greatest common divisor, which is 4:
+
+Probability (not in region II) = $20 ÷ 4 / 32 ÷ 4$
+Probability (not in region II) = $5 / 8$
+
+As a fraction, the probability of selecting a point that does not lie in region II is $5/8$. If you want to express it as a decimal:
+
+Probability (not in region II) = 0.625
+
+Therefore, the probability of selecting a point that does not lie in region II is $5/8$ or 0.625.",YES,True
+True,"['1/4', '.25']",False,False,"In 1980, the world population was 4.44 billion people. A model created at the time predicted that this population would grow at a rate of 0.076 billion people each year after 1980. In 2015, the world population was 7.35 billion people. What is the  
+positive difference, in billions of people, between the actual world population in 2015 and the model’s predicted world population in 2015?","To find the model's predicted world population in 2015, we first need to calculate the number of years that passed from 1980 to 2015:
+
+2015 - 1980 = 35 years
+
+Next, we'll apply the model's predicted growth rate to determine the population in 2015 according to the model. The model predicts an annual growth of 0.076 billion people, so over 35 years the increase would be:
+
+35 years * 0.076 billion people/year = 2.66 billion people
+
+Now let's add the predicted increase to the 1980 population to find the model's prediction for 2015:
+
+4.44 billion people (1980 population) + 2.66 billion people (predicted increase over 35 years) = 7.10 billion people
+
+The actual world population in 2015 was 7.35 billion people. To find the positive difference between the actual world population and the model's prediction, we subtract the model's prediction from the actual population:
+
+7.35 billion people (actual 2015 population) - 7.10 billion people (model's predicted 2015 population) = 0.25 billion people
+
+The positive difference between the actual world population in 2015 and the model's predicted world population in 2015 is 0.25 billion people (or 250 million people).",YES,True
+True,['5730'],False,False,"$M(t) = 10 rac{1}{2}^{rac{t}{5730}}$
+The given function M models the mass of the radioactive isotope carbon-14 in a sample, in picograms, t years after the initial measurement. How much time, in years, does it take for the mass of carbon-14 in the sample to decrease to 5 picograms?","To find out how much time it takes for the mass of carbon-14 to decrease to 5 picograms, we set the function M(t) equal to 5 and solve for t:
+
+\[ M(t) = 10 \cdot \frac{1}{2}^{\frac{t}{5730}} \]
+
+We want to find t when M(t) = 5:
+
+\[ 5 = 10 \cdot \frac{1}{2}^{\frac{t}{5730}} \]
+
+Now, we divide both sides by 10 to isolate the exponential term:
+
+\[ \frac{5}{10} = \frac{1}{2}^{\frac{t}{5730}} \]
+
+Simplifying the left side:
+
+\[ \frac{1}{2} = \frac{1}{2}^{\frac{t}{5730}} \]
+
+We recognize that the left side is the same as \( \frac{1}{2}^{1} \), so we can rewrite the equation:
+
+\[ \frac{1}{2}^{1} = \frac{1}{2}^{\frac{t}{5730}} \]
+
+For the bases and the exponents to be equal, the exponents themselves must be equal:
+
+\[ 1 = \frac{t}{5730} \]
+
+Multiplying both sides by 5730, we find the value of t:
+
+\[ t = 5730 \times 1 \]
+
+\[ t = 5730 \]
+
+So, it will take 5730 years for the mass of carbon-14 in the sample to decrease to 5 picograms.",YES,True
+True,"['107/100', '1.07']",False,True,"[asy]
+import graph;
+size(300, 200, IgnoreAspect);
+real[] x = {250000,270000,300000,280000,400000, 600000};
+real[] y = {267500,270000,305000,308000, 440000,630000};
+pen graphPen = black + 1.5bp;
+pen dotPen = black + 4bp;
+for (int i = 0; i < x.length; ++i) {
+    dot((x[i], y[i]), dotPen);
+}
+xaxis(""Housing units in 2010"", 0,800000, Ticks(Label(fontsize(8pt)), 4));
+yaxis(""Housing units in 2018"", 0,800000, Ticks(Label(fontsize(8pt)), 4));
+draw((0, 0)--(800000,856000));
+[/asy]
+The scatterplot shows the number of housing units in 2010 and 2018 for each of 11 US states. A line of best fit with equation $y=ax$, where a is a constant, is also shown. A point lies above this line if and only if it represents a state with an increase in housing units from 2010 to 2018 greater than 7%. What is the value of a?","The line of best fit is drawn with the equation $y = ax$. This line also serves as a reference point where points above the line represent states with an increase in housing units greater than 7%. 
+
+Given this information, we know that when there is exactly a 7% increase, the point representing the state's housing should lie on the line. To calculate the exact value of 'a', we need to consider 7% more than the housing units in 2010.
+
+Let's make 'x' represent the housing units in 2010, then 'y' would represent the housing units in 2018.
+
+A 7% increase can be calculated as:
+y = x + 0.07x
+y = 1.07x
+
+The line of best fit's equation is:
+y = ax
+
+For these two to be equivalent (since the line corresponds to exactly a 7% increase), a must be equal to 1.07.
+
+So, the value of the constant 'a' is 1.07.",YES,True
+True,['37'],False,False,"A circle in the xy-plane has its center at (4, −5) and has a radius of 2. An equation of the circle is $x^2 -8x + y^2 + 10y + c = 0$, where c is a constant.  What is the value of c?","The general equation of a circle on the xy-plane with its center at point (h, k) and radius r is given by:
+
+\[
+(x - h)^2 + (y - k)^2 = r^2
+\]
+
+In this case, we have the center of the circle at (4, -5), and the radius is 2. Plugging these values into the general circle equation, we get:
+
+\[
+(x - 4)^2 + (y + 5)^2 = 2^2
+\]
+
+Expanding both squares and the right side of the equation:
+
+\[
+x^2 - 8x + 16 + y^2 + 10y + 25 = 4
+\]
+
+Combine like terms:
+
+\[
+x^2 - 8x + y^2 + 10y + (16 + 25 - 4) = 0
+\]
+
+Compute the constant term:
+
+\[
+16 + 25 - 4 = 41 - 4 = 37
+\]
+
+So, the equivalent equation to the one given in the problem is:
+
+\[
+x^2 - 8x + y^2 + 10y + 37 = 0
+\]
+
+Therefore, the constant \( c \) is \( 37 \).",YES,True
