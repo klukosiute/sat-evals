@@ -3,6 +3,7 @@ from openai import OpenAI
 import os
 import base64
 import requests
+import re
 
 # for multiple choice questions
 GRADER_PROMPT = """Could you please help me grade my students' tests? I will show you a student's answer to a question and the correct answer(s). Please tell me whether the student answered the question correctly or incorrectly.
@@ -31,6 +32,92 @@ ALL_COLUMNS_POST_EVAL = [
 def encode_image(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode("utf-8")
+
+
+def run_ignore_image_eval(
+    client: OpenAI,
+    model: str,
+    grader_model: str,
+    dataset: pd.DataFrame,
+    cache_file_path: str,
+):
+    """Shows a text-only model a question (multiple choice or open-text), with ALL ASY IMAGES REMOVED, model samples some text,
+    another model sees the answer and reference answer(s), says whether the original model got the question correct.
+    """
+
+    if os.path.exists(cache_file_path):
+        cache = pd.read_csv(cache_file_path)
+    else:
+        cache = pd.DataFrame(columns=ALL_COLUMNS_POST_EVAL)
+
+    # starts from where it left off
+    questions_to_process = pd.merge(
+        dataset,
+        cache,
+        on="question",
+        how="left",
+        suffixes=("", "_cached"),
+    )
+
+    for i, row in questions_to_process.iterrows():
+        if i % 5 == 0:
+            print("Processing Question No. ", i)
+        # Check if the question was not answered before
+        if pd.isna(row["model_correct"]):
+
+            question = re.sub(
+                r"\[asy\].*?\[/asy\]", "", row["question"], flags=re.DOTALL
+            )
+
+            message = [{"role": "user", "content": question}]
+
+            completion = client.chat.completions.create(
+                model=model,
+                messages=message,
+                n=1,
+            )
+
+            model_answer_text = completion.choices[0].message.content
+
+            corrects_text = " ".join(row["correct_answers"])
+            grader_prompt = GRADER_PROMPT.format(
+                student_answer=model_answer_text, corrects=corrects_text
+            )
+
+            grader_prompt = [{"role": "user", "content": grader_prompt}]
+
+            grader_completion = client.chat.completions.create(
+                model=grader_model,
+                messages=grader_prompt,
+                max_tokens=1,
+                temperature=0,
+                n=1,
+            )
+
+            grader_answer = grader_completion.choices[0].message.content.strip()
+
+            model_correct = grader_answer.strip().startswith("Y")
+
+            # Update cache with new response
+
+            new_entry = {
+                "calculator": row["calculator"],
+                "correct_answers": row["correct_answers"],
+                "is_multiple_choice": row["is_multiple_choice"],
+                "contains_image": row["contains_image"],
+                "question": row["question"],
+                "model_answer_text": model_answer_text,
+                "grader_answer_text": grader_answer,
+                "model_correct": model_correct,
+            }
+
+            cache = pd.concat([cache, pd.DataFrame([new_entry])], ignore_index=True)
+            # update cache
+            cache.to_csv(cache_file_path, index=False)
+        else:
+            continue
+
+    return cache
 
 
 def run_vision_eval(
@@ -229,19 +316,32 @@ def run_text_eval(
 
 def main():
 
-    ## run the text eval on GPT-3
     with open("/Users/kamile/code/oai/.openai.secret", "r") as f:
         contents = f.read().strip()
     api_key = contents.split("\n")[0].split("=")[1].strip()
     client = OpenAI(api_key=api_key)
 
+    # run the text but ignore imgaes eval on GPT-4
     dataset = pd.read_json("./data/oct_2023_sat_math.jsonl", lines=True)
-    result = run_text_eval(client, GPT3, GPT3, dataset, "gpt-3-text-eval.cache")
-    print("Accuracy GPT-3", sum(result["model_correct"]) / len(result))
+    result = run_ignore_image_eval(
+        client, GPT4, GPT3, dataset, "gpt-4-ignore-image-eval.cache"
+    )
+    print("Accuracy GPT-4 (Ignore Image)", sum(result["model_correct"]) / len(result))
 
     ## run the text eval on GPT-4
     result = run_text_eval(client, GPT4, GPT3, dataset, "gpt-4-text-eval.cache")
-    print("Accuracy GPT-4", sum(result["model_correct"]) / len(result))
+    print("Accuracy GPT-4 (Asy)", sum(result["model_correct"]) / len(result))
+
+    ## the version where you'd have skipped all questions that contained an imgage
+    result = pd.merge(
+        dataset,
+        result,
+        on="question",
+        how="left",
+        suffixes=("", "_cached"),
+    )
+    subset = result[result.contains_image == False]
+    print("Accuracy GPT-4 (Skip Image)", sum(subset["model_correct"]) / len(subset))
 
     ## run the vision eval (GPT-4 + vision)
     result = run_vision_eval(client, api_key, GPT3, dataset, "gpt-4-vision-eval.cache")
